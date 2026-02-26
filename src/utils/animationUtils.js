@@ -1,24 +1,22 @@
 import {
- FRAME_HEIGHT_BY_MOON_INDEX,
- MOON_TEXTS,
- TEXT_FRAME_MATCH_WINDOW,
- TEXT_OVERLAY_DELAY_FRAMES,
+  FRAME_HEIGHT_BY_MOON_INDEX,
+  MOON_TEXTS,
+  TEXT_FRAME_MATCH_WINDOW,
+  TEXT_OVERLAY_DELAY_FRAMES,
 } from '../config/animationConfig';
 
 /**
  * Extracts frame number from:
- * - "video (12).jpg"
- * - "12.jpg" / "12.png"
+ * - "11.png" / "2.jpg"
  */
 export function getVideoFrameNumber(pathOrUrl) {
   const normalizedValue = decodeURIComponent(String(pathOrUrl))
     .replace(/\+/g, ' ')
     .replace(/\\/g, '');
-  const videoNamedMatch = normalizedValue.match(/video\s*\((\d+)\)\./i);
-  if (videoNamedMatch) return Number(videoNamedMatch[1]);
 
-  const numericFileMatch = normalizedValue.match(/(?:^|\/)(\d+)\.(?:png|jpe?g|webp)$/i);
+  const numericFileMatch = normalizedValue.match(/(?:^|\/)(\d+)\.(?:png|jpe?g|webp)(?:[?#].*)?$/i);
   return numericFileMatch ? Number(numericFileMatch[1]) : null;
+
 }
 
 /**
@@ -166,4 +164,3 @@ export function isInDelayedRange(currentFrame, range, delayFrames) {
     currentFrame <= range[1] + delayFrames
   );
 }
-

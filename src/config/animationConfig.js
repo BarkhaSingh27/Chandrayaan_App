@@ -50,7 +50,7 @@ export const POST_INTRO_IMAGE_FRAME_RANGE = [15, 19];
 export const POST_INTRO_EARTH_FRAME_RANGE = [20, 25];
 // Moon intro sequence that must play before separation starts.
 export const PRE_SEPARATION_SEQUENCE_FRAME_RANGE = [1, 11];
-// Separation sequence starts from moon frame "video (12).jpg" and flows into landing.
+// Separation sequence starts from moon frame "12.jpg" and flows into landing.
 export const SEPARATION_SEQUENCE_FRAME_RANGE = [12, 24];
 
 // Per-frame scroll spacer heights for the moon sequence.
