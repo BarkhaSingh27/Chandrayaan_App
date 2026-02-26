@@ -1,18 +1,8 @@
-import React from 'react';
-  
-  const AnimationUtils = () =>  {
-	return (
-	  <div>
-	  </div>
-	);
-  }
-  
-  export default AnimationUtils;
-  import {
-  FRAME_HEIGHT_BY_MOON_INDEX,
-  MOON_TEXTS,
-  TEXT_FRAME_MATCH_WINDOW,
-  TEXT_OVERLAY_DELAY_FRAMES,
+import {
+ FRAME_HEIGHT_BY_MOON_INDEX,
+ MOON_TEXTS,
+ TEXT_FRAME_MATCH_WINDOW,
+ TEXT_OVERLAY_DELAY_FRAMES,
 } from '../config/animationConfig';
 
 /**
@@ -176,3 +166,4 @@ export function isInDelayedRange(currentFrame, range, delayFrames) {
     currentFrame <= range[1] + delayFrames
   );
 }
+
